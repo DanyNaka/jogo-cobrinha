@@ -48,11 +48,11 @@ function iniciarJogo() {
     if (snake[0].y > 15 * box && direction == "down") snake[0].y = 0;
     if (snake[0].y < 0 && direction == "up") snake[0].y = 16 * box;
 
-    for(i = 1; i < snake.length; i++){
-        if(snake[0].x == snake[i].x && snake[0].y == snake[i].y){
+    for (i = 1; i < snake.length; i++) {
+        if (snake[0].x == snake[i].x && snake[0].y == snake[i].y) {
             //se o corpo for o mesmo da cabeça
             clearInterval(jogo); //para o jogo 
-            alert('Game Over :('); 
+            alert('Game Over :(');
         }
     }
 
@@ -70,11 +70,11 @@ function iniciarJogo() {
 
     //se a snake não encontra a food continua retirando o último elemento,
     //se não, mostra a comidinha em outro lugar (*adiciona a cobrinha)
-    if(snakeX != food.x || snakeY != food.y){ 
-        snake.pop(); 
-    }else{
-        food.x = Math.floor(Math.random() * 15 +1) * box;
-        food.y = Math.floor(Math.random() * 15 +1) * box;
+    if (snakeX != food.x || snakeY != food.y) {
+        snake.pop();
+    } else {
+        food.x = Math.floor(Math.random() * 15 + 1) * box;
+        food.y = Math.floor(Math.random() * 15 + 1) * box;
     }
 
     let newHead = {
